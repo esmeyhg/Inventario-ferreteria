@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="238.0" prefWidth="365.0" stylesheets="@estilo.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="javafxapplication.FXMLMenuController">
+   <children>
+      <ImageView fitHeight="107.0" fitWidth="142.0" layoutX="193.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@shop.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="107.0" fitWidth="141.0" layoutX="25.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@inventario.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="52.0" fitWidth="170.0" layoutX="107.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@menu.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="art" layoutX="40.0" layoutY="188.0" mnemonicParsing="false" onAction="#gotoArticulos" prefHeight="25.0" prefWidth="102.0" text="Articulos">
+         <font>
+            <Font name="Book Antiqua" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="vent" layoutX="208.0" layoutY="188.0" mnemonicParsing="false" onAction="#gotoVentas" prefHeight="25.0" prefWidth="102.0" text="Ventas">
+         <font>
+            <Font name="Book Antiqua" size="18.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

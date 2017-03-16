@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="730.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplication.FXMLDocumentController">
+    <children>
+        <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
+      <SplitPane dividerPositions="0.6153846153846154" prefHeight="500.0" prefWidth="730.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <TableView fx:id="tablaArticulos" layoutX="6.0" layoutY="6.0" prefHeight="492.0" prefWidth="446.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columns>
+                      <TableColumn fx:id="claveCL" prefWidth="49.0" text="Clave" />
+                      <TableColumn fx:id="nombreCL" prefWidth="101.0" text="Nombre" />
+                        <TableColumn fx:id="descripcionCL" prefWidth="75.0" text="Descripcion" />
+                        <TableColumn fx:id="precioCL" prefWidth="65.0" text="Precio" />
+                        <TableColumn fx:id="existenciaCL" prefWidth="67.0" text="Existencia" />
+                        <TableColumn fx:id="unidadCL" prefWidth="93.0" text="Tipo unidad" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="498.0" prefWidth="277.0">
+               <children>
+                  <Label layoutX="28.0" layoutY="14.0" text="Operaciones Articulos:">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="12.0" layoutY="60.0" text="Clave:">
+                     <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="20.0" layoutY="106.0" />
+                  <Label layoutX="9.0" layoutY="114.0" text="Nombre:">
+                     <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="219.0" text="Precio:">
+                     <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="8.0" layoutY="166.0" text="Descripción:">
+                     <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="8.0" layoutY="272.0" text="Existencia:">
+                     <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="3.0" layoutY="323.0" text="Tipo de Unidad:">
+                     <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="claveTF" layoutX="10.0" layoutY="80.0" prefHeight="25.0" prefWidth="253.0" />
+                  <TextField fx:id="nombreTF" layoutX="10.0" layoutY="132.0" prefHeight="25.0" prefWidth="253.0" />
+                  <TextField fx:id="descripcionTF" layoutX="10.0" layoutY="186.0" prefHeight="25.0" prefWidth="253.0" />
+                  <TextField fx:id="precioTF" layoutX="10.0" layoutY="239.0" prefHeight="25.0" prefWidth="253.0" />
+                  <TextField fx:id="existenciaTF" layoutX="10.0" layoutY="292.0" prefHeight="25.0" prefWidth="253.0" />
+                  <TextField fx:id="unidadTF" layoutX="10.0" layoutY="345.0" prefHeight="25.0" prefWidth="253.0" />
+                  <Button fx:id="nuevoBT" layoutX="18.0" layoutY="392.0" mnemonicParsing="false" onAction="#nuevo" text="Nuevo" />
+                  <Button fx:id="insertarBT" layoutX="78.0" layoutY="392.0" mnemonicParsing="false" onAction="#insertar" text="Agregar" />
+                  <Button fx:id="editarBT" layoutX="148.0" layoutY="392.0" mnemonicParsing="false" onAction="#editar" text="Editar" />
+                  <Button fx:id="eliminarBT" layoutX="204.0" layoutY="392.0" mnemonicParsing="false" onAction="#eliminar" text="Eliminar" />
+                  <Button fx:id="volver" layoutX="91.0" layoutY="446.0" mnemonicParsing="false" onAction="#regresar" text="Volver al menú" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+    </children>
+</AnchorPane>
