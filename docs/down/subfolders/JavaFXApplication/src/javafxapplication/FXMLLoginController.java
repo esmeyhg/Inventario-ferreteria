@@ -41,7 +41,7 @@ public class FXMLLoginController implements Initializable {
       stage.setTitle("Menu");
       stage.initModality(Modality.APPLICATION_MODAL);
       stage.initOwner(login.getScene().getWindow());
-      stage.showAndWait();
+      stage.show();
     } else {
       stage=(Stage)login.getScene().getWindow();
       stage.close();

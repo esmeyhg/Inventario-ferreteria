@@ -19,8 +19,8 @@ import javafx.beans.property.StringProperty;
  * @version 0.1
  */
 public class Ventas {
-  public SimpleStringProperty claveventa = new SimpleStringProperty();
-  public SimpleStringProperty nombreventa = new SimpleStringProperty();
+  public SimpleStringProperty clave = new SimpleStringProperty();
+  public SimpleStringProperty nombre = new SimpleStringProperty();
   public SimpleIntegerProperty cantidad = new SimpleIntegerProperty();
   public SimpleDoubleProperty precio = new SimpleDoubleProperty();
   public SimpleDoubleProperty neto = new SimpleDoubleProperty();
@@ -42,10 +42,10 @@ public class Ventas {
    * @param existencia existencia en cantidad del articulo
    * @param tipoUnidad tipo de unidad del articulo, pieza, kg, lt
    */
-  Ventas(String claveventa, String nombreventa, int cantidad, double precio,
+  Ventas(String clave, String nombre, int cantidad, double precio,
          double neto, double total){
-    this.claveventa = new SimpleStringProperty("");
-    this.nombreventa = new SimpleStringProperty("");
+    this.clave = new SimpleStringProperty("");
+    this.nombre = new SimpleStringProperty("");
     this.cantidad = new SimpleIntegerProperty();
     this.precio= new SimpleDoubleProperty();
     this.total = new SimpleDoubleProperty();
@@ -53,12 +53,12 @@ public class Ventas {
   }
   
       //getters
-  public String getClaveventa(){
-    return claveventa.get();
+  public String getClave(){
+    return clave.get();
   }
     
-  public String getNombreventa(){
-    return nombreventa.get();
+  public String getNombre(){
+    return nombre.get();
   }
     
   public int getCantidad(){
@@ -82,12 +82,12 @@ public class Ventas {
   }
     
   //setters
-  public void setClaveventa(String claveventa){
-    this.claveventa.set(claveventa);
+  public void setClave(String clave){
+    this.clave.set(clave);
   }
     
-  public void setNombreventa(String nombreventa){
-    this.nombreventa.set(nombreventa);
+  public void setNombre(String nombre){
+    this.nombre.set(nombre);
   }
     
   public void setCantidad(int cantidad){
@@ -114,12 +114,12 @@ public class Ventas {
    * métodos property
    * @return 
    */
-  public StringProperty claveventaProperty(){
-    return claveventa;
+  public StringProperty claveProperty(){
+    return clave;
   }
   
-  public StringProperty nombreventaProperty() {
-    return nombreventa;
+  public StringProperty nombreProperty() {
+    return nombre;
   }
   
   public IntegerProperty cantidadProperty(){

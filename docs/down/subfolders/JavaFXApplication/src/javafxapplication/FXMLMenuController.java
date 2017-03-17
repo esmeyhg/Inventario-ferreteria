@@ -40,6 +40,7 @@ public class FXMLMenuController implements Initializable {
       stage.initModality(Modality.APPLICATION_MODAL);
       stage.initOwner(art.getScene().getWindow());
       stage.showAndWait();
+      stage.close();
     } else {
       stage=(Stage)art.getScene().getWindow();
       stage.close();

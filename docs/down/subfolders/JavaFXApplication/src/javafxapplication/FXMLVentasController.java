@@ -35,6 +35,7 @@ public class FXMLVentasController implements Initializable {
   
   //Declaracion de botones
   @FXML private Button comprarBT;
+  @FXML private Button otroBT;
   @FXML private Button agregarBT;
   @FXML private Button eliminarBT;
   @FXML private Button editarBT;
@@ -57,9 +58,9 @@ public class FXMLVentasController implements Initializable {
   @FXML private TableColumn netoCL;
   ObservableList<Ventas> ventas;
   
-  private int posicion;
+  private int posicionVentaEnTabla;
   
-    @FXML
+  @FXML
   private void regresarWindows(ActionEvent rw) throws IOException {
     Stage stage;
     Parent root;
@@ -69,44 +70,68 @@ public class FXMLVentasController implements Initializable {
       stage.setScene(new Scene(root));
       stage.setTitle("Menu");
       stage.initModality(Modality.APPLICATION_MODAL);
-      stage.initOwner(regresarBT.getScene().getWindow());
-      stage.showAndWait();
+      stage=(Stage)regresarBT.getScene().getWindow();
+      stage.close();
     } else {
       stage=(Stage)regresarBT.getScene().getWindow();
       stage.close();
     }
   }
   
+  /**
+   * metodo para insertar un nuevo articulo
+   * @param event al presionar el boton nuevo reaccionará
+   */
   @FXML
-  private void realizarVenta(ActionEvent rv) throws IOException {
+  private void nuevo(ActionEvent e) {
+    claveTF.setText("");
+    nombreTF.setText("");
+    fechaTF.setText("");
+    precioTF.setText("");
+    cantidadTF.setText("");
+  }
+  
+  @FXML
+  private void agrega(ActionEvent agrega) {
     Ventas venta = new Ventas();
-    venta.claveventa.set(claveTF.getText());
-    venta.nombreventa.set(nombreTF.getText());
+    
+    venta.clave.set(claveTF.getText());
+    venta.nombre.set(nombreTF.getText());
     venta.cantidad.set(Integer.parseInt(cantidadTF.getText()));
     venta.precio.set(Double.parseDouble(precioTF.getText()));
-    venta.total.set(Double.parseDouble(totalTF.getText()));
-    venta.fecha.set(fechaTF.getText());
+    venta.setNeto(venta.getCantidad()* venta.getPrecio());
+    venta.total.set(venta.getNeto());
     
     ventas.add(venta); 
-    ventas.set(posicion,venta);
   }
   
   @FXML
-  private void editarVenta(ActionEvent eventa) {
+  private void edita(ActionEvent t) {
     Ventas venta = new Ventas();
-    venta.claveventa.set(claveTF.getText());
-    venta.nombreventa.set(nombreTF.getText());
+    venta.clave.set(claveTF.getText());
+    venta.nombre.set(nombreTF.getText());
     venta.cantidad.set(Integer.parseInt(cantidadTF.getText()));
     venta.precio.set(Double.parseDouble(precioTF.getText()));
-    venta.total.set(Double.parseDouble(totalTF.getText()));
     venta.fecha.set(fechaTF.getText());
-    
-    ventas.set(posicion, venta);
+    venta.setNeto(venta.getCantidad()* venta.getPrecio());
+    venta.total.set(venta.getNeto());
+   
+    ventas.set(posicionVentaEnTabla, venta);
   }
   
   @FXML
-  private void eliminarVenta(ActionEvent elv) {
-    ventas.remove(posicion);
+  private void elimina(ActionEvent elv) {
+    ventas.remove(posicionVentaEnTabla);
+  }
+  
+  @FXML
+  private void compra(ActionEvent com) {
+    Ventas venta = new Ventas();
+    
+    venta.setTotal(Double.parseDouble(totalTF.getText()));
+    ventas.set(posicionVentaEnTabla, venta);
+    
+    
   }
   
   private final ListChangeListener<Ventas> selectorTablaVentas =
@@ -126,20 +151,19 @@ public class FXMLVentasController implements Initializable {
   }
   
   private void ponerVentasSeleccionado() {
-    final Ventas vendido = getTablaVentasSeleccionado();
-    posicion = ventas.indexOf(vendido);
+    final Ventas venta = getTablaVentasSeleccionado();
+    posicionVentaEnTabla = ventas.indexOf(venta);
     
-    if (vendido != null) {
-      claveTF.setText(vendido.getClaveventa());
-      nombreTF.setText(vendido.getNombreventa());
+    if (venta != null) {
+      claveTF.setText(venta.getClave());
+      nombreTF.setText(venta.getNombre());
      //descripcionTF.setText(articulo.getDescripcion());
      // precioTF.setText(Double.toString().getClass().getMethod(articulo.getPrecio()));
      //existenciaTF.setText(Integer.toString(posicionArticuloEnTabla));
-      fechaTF.setText(vendido.getFecha());
       
       editarBT.setDisable(false);
       eliminarBT.setDisable(false);
-      agregarBT.setDisable(true);
+      agregarBT.setDisable(false);
     }
   }
 

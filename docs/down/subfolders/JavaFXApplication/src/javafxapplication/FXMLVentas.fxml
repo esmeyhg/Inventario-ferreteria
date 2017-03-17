@@ -7,8 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="javafxapplication.FXMLVentasController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplication.FXMLVentasController">
    <children>
       <SplitPane dividerPositions="0.314070351758794" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0">
         <items>
@@ -31,7 +30,7 @@
                   <Label layoutX="263.0" layoutY="84.0" text="Precio:  $" />
                   <Label layoutX="384.0" layoutY="84.0" text="Cantidad:" />
                   <TextField fx:id="cantidadTF" layoutX="438.0" layoutY="80.0" prefHeight="25.0" prefWidth="63.0" />
-                  <Button fx:id="comprarBT" layoutX="521.0" layoutY="80.0" mnemonicParsing="false" text="Comprar" />
+                  <Button fx:id="comprarBT" layoutX="521.0" layoutY="80.0" mnemonicParsing="false" onAction="#compra" text="Comprar" />
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="282.0" stylesheets="@estilo.css">
@@ -45,10 +44,11 @@
                         <TableColumn fx:id="netoCL" prefWidth="91.0" text="Neto" />
                     </columns>
                   </TableView>
-                  <Button fx:id="eliminarBT" layoutX="142.0" layoutY="237.0" mnemonicParsing="false" onAction="#eliminarVenta" text="Eliminar" />
-                  <Button fx:id="editarBT" layoutX="213.0" layoutY="237.0" mnemonicParsing="false" onAction="#editarVenta" text="editar" />
-                  <Button fx:id="agregarBT" layoutX="270.0" layoutY="237.0" mnemonicParsing="false" onAction="#realizarVenta" text="Agregar" />
-                  <Button fx:id="regresarBT" layoutX="338.0" layoutY="237.0" mnemonicParsing="false" text="Volver al menú" />
+                  <Button fx:id="eliminarBT" layoutX="310.0" layoutY="237.0" mnemonicParsing="false" onAction="#elimina" text="Eliminar" />
+                  <Button fx:id="editarBT" layoutX="263.0" layoutY="237.0" mnemonicParsing="false" onAction="#edita" text="editar" />
+                  <Button fx:id="agregarBT" layoutX="204.0" layoutY="237.0" mnemonicParsing="false" onAction="#agrega" text="Agregar" />
+                  <Button fx:id="regresarBT" layoutX="369.0" layoutY="237.0" mnemonicParsing="false" onAction="#regresarWindows" text="Volver al menú" />
+                  <Button fx:id="otroBT" layoutX="122.0" layoutY="237.0" mnemonicParsing="false" onAction="#nuevo" text="otro articulo" />
                </children>
             </AnchorPane>
         </items>

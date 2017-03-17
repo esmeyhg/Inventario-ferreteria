@@ -16,7 +16,6 @@ import javafx.stage.Stage;
  * @author Esmeralda Yamileth Hernández González
  */
 public class JavaFXApplication extends Application {
-  
   @Override
   public void start(Stage stage) throws Exception {
     Parent pane = FXMLLoader.load(getClass().getResource("FXMLLogin.fxml"));

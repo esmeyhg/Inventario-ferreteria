@@ -75,8 +75,8 @@ public class FXMLDocumentController implements Initializable {
         stage.setScene(new Scene(root));
         stage.setTitle("Menu");
         stage.initModality(Modality.APPLICATION_MODAL);
-        stage.initOwner(volver.getScene().getWindow());
-        stage.showAndWait();
+        stage=(Stage)volver.getScene().getWindow();
+        stage.close();
       } else {
         stage=(Stage)volver.getScene().getWindow();
         stage.close();
